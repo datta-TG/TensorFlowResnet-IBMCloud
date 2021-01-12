@@ -60,9 +60,9 @@ The following checkmark and the word 'normal' will appear once the Kubernetes Cl
 ![Screenshot](StoragePaid1.PNG)
 
 
-## Step 3: Install PyTorch
+## Step 3: Install TensorFlow Resnet
 
-* Click on the search section at the top of the main page, type PyTorch, and click on it.
+* Click on the search section at the top of the main page, type TensorFlow Resnet, and click on it.
 
 ![Screenshot](tensor1.PNG)
 
