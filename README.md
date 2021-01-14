@@ -66,16 +66,16 @@ The following checkmark and the word 'normal' will appear once the Kubernetes Cl
 
 ![Screenshot](tensor1.PNG)
 
-* A new window opens, select the cluster and enter the name you want for the TensorFlow Resnet workspace, in this case, it will be called _tensorflow-example_, accept the terms and click on *Install*. You can modify the different installation parameters at the bottom. We will leave them by default as shown below, but you can read more about setting up the parameters [here](https://cloud.ibm.com/catalog/content/tensorflow-resnet "here").
+* A new window opens, select the cluster, and then select the workspace you want TensorFlow Resnet to be installed. You can also write a new workspace. In this case, we will use the previously _storage-example_ workspace. Type a workspace name under 'Configure your workspace', accept the terms and click on Install. You can modify the different installation parameters at the bottom. We will leave them by default as shown below, but you can read more about setting up the parameters [here](https://cloud.ibm.com/catalog/content/tensorflow-resnet "here").
 
-![Screenshot](tensor2.PNG)
+![Screenshot](tensor3.PNG)
 
 
 ## Step 4: Verify Installation
 
 * Go to *Resources List* in the Left Navigation Menu and click on *Kubernetes*.
 
-![Screenshot](test11.png)
+![Screenshot](test1.png)
 
 * Click the *Actions* button and select *Web terminal*.
 
@@ -85,33 +85,29 @@ The following checkmark and the word 'normal' will appear once the Kubernetes Cl
 
 ![Screenshot](test3.PNG)
 
+![Screenshot](test7.PNG)
+
 * Once you have installed the terminal, click on the action button again, select web terminal, and type the following command. It will show you the workspaces of your cluster. You can see *tensorflow-example* is now active.
 
 `$ kubectl get ns`
 
-![Screenshot](test4.PNG)
+![Screenshot](tensortest0.png)
 
-* You can then obtain more data about the service and it's pods.
+* You can then obtain more data about the service and it's pods. You can now use the External IP and its port to call the TensowFlow Resnet model in your own application.
 
 `$ kubectl get pod -n NAMESERVICE -o wide`
 
-![Screenshot](test5.PNG)
+![Screenshot](tensortest2.PNG)
 
 `$ kubectl get service -n NAME SERVICE`
 
-![Screenshot](test6.PNG)
+![Screenshot](tensortest3.PNG)
 
-* Select the pod within your service using bash.
+* Select the pod within your service using bash if you want to use the files or change any configuration of the TensorFlow installation.
 
 `$ kubectl exec --stdin --tty PODNAME -n NAMESPACE -- /bin/bash`
 
-![Screenshot](test8.PNG)
-
-* And finally, check if PyTorch is correctly installed checking its version:
-
-`python -c "import torch; print(torch.__version__)"`
-
-![Screenshot](test9.PNG)
+![Screenshot](tensortest4.PNG)
 
 You have finished the installation, enjoy your TensorFlow Resnet installation!
 
